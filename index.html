@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">        
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>  
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>    
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="JS/index.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+        <script>  
+            $(function(){ 
+                $("#sticky-footer").load("footer.html");  
+            }); 
+        </script> 
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top justify-content-center">
+            <div class="navbar-brand" href="#">
+                <i class='fas fa-headphones' style='font-size:25px'></i> Beat Buzz
+            </div>
+        </nav>
+        <div class="container">
+            <br>
+            <h4 style="text-align: center;font-size: 25px;"><b>Admin Login</b></h4>
+            <form action="dashboard.html" id="form1" onsubmit="return validate()" class="container login-form" style="padding-left: 10%;padding-right: 10%;">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-social-person-outline prefix"></i>
+                        <input class="validate" id="email" name="email" type="email" placeholder="Email" required>
+                        <label for="text" class="center-align"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-lock-outline prefix"></i>
+                        <input id="password" name="password" placeholder="Password" type="password" required>
+                        <label for="password"></label>
+                    </div>
+                </div>
+                <button style="background-color: #211F1F;" type="submit" form="form1" class="btn btn-dark btn-block ">Login</button>
+            </form>
+
+        </div>
+        <br><br><br><br><br><br>
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50"></footer>
+    </body>
+</html>

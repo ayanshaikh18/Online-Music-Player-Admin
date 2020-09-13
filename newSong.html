@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">        
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>  
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>    
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>  
+            $(function(){ 
+                $("#sticky-footer").load("footer.html");  
+            }); 
+        </script> 
+        <style>            
+            .nav-item a{
+                font-size: 17px;
+            }
+            .card{
+                background-color: #f9f7f7;
+                border-radius: 10px;
+            }
+            .nav-link:hover{
+                background-color: white;
+                color: black !important;
+                border-radius: 10px;
+            }
+        </style> 
+    </head> 
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+            <div class="navbar-brand" href="#">
+                <i class='fas fa-headphones' style='font-size:36px'></i> Beat Buzz
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="newSong.html" >Upload / Update Song</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newPlaylist.html" >New Playlist</a>
+                    </li>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" >Logout</a>
+                    </li>    
+                </ul>
+            </div>  
+        </nav>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <b><h3 style="text-align: center;">New Song</h3></b>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="container">
+                                <form action="#">
+                                    <div class="form-group">
+                                    <label for="name">Song name :</label>
+                                    <input type="text" class="form-control" required id="name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="catagory">Catagory : </label>
+                                    <input type="text" class="form-control" required id="catagory" name="catagory">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="poster">Poster for song : </label>
+                                        <input type="file" class="form-control-file" id="poster">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label for="artist-name">Artist Name :</label>
+                                            <input type="password" class="form-control" required id="cpassword" name="cpassword">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="artist-pic">Artist's photo</label>
+                                            <input type="file" class="form-control-file" id="artist-pic">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-dark btn-lg btn-block">Upload</button>
+                                    </div>    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <b><h3 style="text-align: center;">Update Song</h3></b>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="container">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Song</label>
+                                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                            <option selected>--Select Song---</option>
+                                            <option value="1">Pachhataoge</option>
+                                            <option value="2">Tum Hi Ho</option>
+                                            <option value="3">Kun Faya Kun</option>
+                                            <option value="5">Namo</option>
+                                            <option value="5">Illegal Weapon</option>
+                                        </select>
+                                    </div>    
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-dark btn-lg btn-block">Select</button>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br> 
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50"></footer>
+    </body>
+</html>
