@@ -5,16 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">       
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">        
         
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>  
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script>  
-            $(function(){ 
-                $("#sticky-footer").load("footer.html");  
-            }); 
-        </script> 
         <style>            
             .nav-item a{
                 font-size: 17px;
@@ -23,38 +17,10 @@
                 background-color: #f9f7f7;
                 border-radius: 10px;
             }
-            .nav-link:hover{
-                background-color: white;
-                color: black !important;
-                border-radius: 10px;
-            }
         </style> 
     </head> 
     <body>
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-            <div class="navbar-brand" href="#">
-                <i class='fas fa-headphones' style='font-size:36px'></i> Beat Buzz
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="newSong.html" >Upload / Update Song</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="newPlaylist.html" >New Playlist</a>
-                    </li>    
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" >Logout</a>
-                    </li>    
-                </ul>
-            </div>  
-        </nav>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top"></nav>
         <br>
         <div class="container">
             <div class="row">
@@ -77,14 +43,17 @@
                                         <label for="poster">Poster for song : </label>
                                         <input type="file" class="form-control-file" id="poster">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
+                                    <div class="row" id="artists">
+                                        <div class="col-sm-4">
                                             <label for="artist-name">Artist Name :</label>
-                                            <input type="password" class="form-control" required id="cpassword" name="cpassword">
+                                            <input type="text" class="form-control" required id="artist-name" name="cpassword">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="artist-pic">Artist's photo</label>
                                             <input type="file" class="form-control-file" id="artist-pic">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="add" type="button" onclick="addArtist()" class="btn btn-primary btn-sm">Add Artist</button>
                                         </div>
                                     </div>
                                     <br>
@@ -127,5 +96,29 @@
         </div>
         <br><br> 
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50"></footer>
+        
+        <script>  
+            $("#sticky-footer").load("footer.html"); 
+            $(".navbar").load("header.html",
+                function(){
+                    $("#newSong").toggleClass("nav-item active");
+                }
+            );
+
+            function addArtist(){
+                $("#artists").append(`
+                <div class="col-sm-4">
+                    <label for="artist-name">Artist Name :</label>
+                    <input type="text" class="form-control" required id="artist-name" name="cpassword">
+                </div>
+                <div class="col-sm-6">
+                    <label for="artist-pic">Artist's photo</label>
+                    <input type="file" class="form-control-file" id="artist-pic">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" onclick="addArtist()" class="btn btn-primary btn-sm">Add Artist</button>
+                </div>`);
+            }
+        </script>
     </body>
 </html>
